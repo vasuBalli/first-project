@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color:darkslategray;
+            height:500px;
+            width:400px;
+            
+            white-space: nowrap;
+            overflow: auto;
+            text-overflow:ellipsis;
+            scroll-behavior: None;
+        }
+        #title{
+            color: azure ;
+            background-color: cornflowerblue;
+            margin-top: -25px;
+            display:flex;
+            height: 50px;
+            
+            
+            
+
+        }
+        #user1{
+            color:antiquewhite;
+            text-shadow: 2px 1px black;
+            font-size: 15px;
+            padding-left: 10px;
+        }
+        #user2{
+        
+            color: aquamarine;
+            width:100px;
+    
+            padding-right: 10px;
+            padding-left: 270px;
+            text-align: end;
+            height: 25px;
+            direction:ltr;
+            padding-top: 10px;
+            text-shadow: 2px 1px black;
+            font-size: 15px;
+        }
+        #name{
+            padding-top: 5px;
+        }
+        #title1{
+            padding-top: 5px;
+            padding-left: 190px;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="title">
+            <h5 id="name">user2</h5>
+            <h3 id="title1">chat system</h3>
+        </div>
+        <div id="msgs">
+            {%for i in msgss%}
+            {%if i.0 == "_"%}
+            <h5 id="user2">{{i|slice:"1:"}}</h5>
+            {%else%}
+            <h5 id="user1">{{i}}</h5>
+            {%endif%}
+            
+            {%endfor%}
+            
+            
+        
+        </div>
+       
+        
+        
+    </div>
+    <form action="">
+        <input type="text" name="client1">
+        <input type="submit" value="send">
+    </form>
+    
+
+</body>
+</html>
